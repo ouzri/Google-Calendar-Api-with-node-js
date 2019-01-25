@@ -91,22 +91,7 @@ fs.readFile('credentials.json', (err, content) => {
       console.log('Upcoming 10 events:');
 
 
-      var i = 0;
-
-while (i < 6) {
-  if (i === 3) {
-    break;
-  }
-  i = i + 1;
-}
-
-console.log(i);
-// expected output: 3
-
-
-
-
-
+ 
       for (let i = 0; i < events.length; i++) {
         var event = events[i];
         var start = event.start.dateTime || event.start.date;
@@ -138,14 +123,6 @@ console.log(i);
         }
 
         });
-            //var urlDate = '2019-01-20T21:00:00+01:00';
-        
-
-
-
-      
-
-
 
 
 
