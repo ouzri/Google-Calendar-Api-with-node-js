@@ -1,12 +1,11 @@
-// api.js
+// app.js
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true  }));
 
 
-
-
+/*tttttttttt*/
 
 
 const http = require('http');
@@ -102,6 +101,10 @@ fs.readFile('credentials.json', (err, content) => {
       //console.log('Upcoming 10 events:');
 
 
+
+
+
+
       for (let i = 0; i < events.length; i++) {
         var event = events[i];
         var start = event.start.dateTime ;
@@ -125,19 +128,168 @@ app.post('/', (request, response) => {
 
   if (tmp === start) 
         { 
-          response.send('le créneau que vous avez choisi est indisponible !. "' + request.body.date + '".');
+          response.send(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Simply Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #e0163a; /* red */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid bg-4 text-center">
+  <h3 class="margin"></h3>
+  
+  <h1>le créneau que vous avez choisi est indisponible</h1>
+</div>
+
+<div class="container-fluid bg-2 text-center">
+  
+  <a href="#" onclick="goBack()" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-repeat" ></span> BACK
+  </a>
+</div>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script> 
+</body>
+</html>
+`);
           
           console.log("le créneau que vous avez choisi est indisponible !.") ;
         }else if (tmp !== start) {
-          response.send('le créneau que vous avez choisi est disponible !. "' + request.body.date + '".');
+          response.send(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Simply Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid bg-1 text-center">
+  <h3 class="margin"></h3>
+  
+  <h1>le créneau que vous avez choisi est disponible</h1>
+</div>
+
+<div class="container-fluid bg-2 text-center">
+  
+  <a href="#" onclick="goBack()" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-repeat" ></span> BACK
+  </a>
+</div>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script> 
+</body>
+</html>
+` + request.body.date + '".');
           console.log("le créneau que vous avez choisi est disponible !.");
 
         }else{
-          response.send("vide*-*");
-          console.log("vide*-*");
+          response.send("Error*-*");
+          console.log("Error*-*");
         }
   
 });
+
 
 
 /*if we want use the console*/
@@ -166,8 +318,6 @@ app.post('/', (request, response) => {
     }
   });
 }
-
-
 
 
 
