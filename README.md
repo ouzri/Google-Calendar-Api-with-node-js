@@ -4,3 +4,7 @@ Enable the google calendar api and download the credetials.json file in the root
 As you node the basic file index.js a link should appear. Open this link and authorize your app
 A token.json file should appear afterwards
 You have now successfully authorized this client.
+****Check availability date using console ****
+$node . 
+****Check availability date with a form****
+$node api.js
