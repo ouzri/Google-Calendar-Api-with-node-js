@@ -14,3 +14,7 @@ Check availability date using console:
 Check availability date with a form:
 
 * $node api.js
+1. Go to http://localhost:3000/.
+
+list of events exist in calondar.
+![Image of index](https://github.com/ouzri/Google-Calendar-Api-with-node-js/blob/master/img/calendar.PNG)
